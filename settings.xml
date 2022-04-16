@@ -30,7 +30,7 @@
     <mirror>
       <id>vpro-maven-central</id>
       <name>vpro-maven-central</name>
-      <url>http://nexusrepo.samimhome.xyz/#admin/repository/repositories:vpro-maven-group</url>
+      <url>http://34.123.225.115:8081/repository/vpro-maven-group/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
