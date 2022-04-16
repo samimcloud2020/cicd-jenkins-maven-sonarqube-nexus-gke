@@ -8,7 +8,12 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>MavenTutorial Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  
+  <repositories>
+    <repository>
+      <id>vpro-maven-group</id>
+      <url>http://34.123.225.115:8081/repository/vpro-maven-group//</url>
+    </repository>
+  </repositories>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
