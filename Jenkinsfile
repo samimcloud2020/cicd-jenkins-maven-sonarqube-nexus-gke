@@ -53,7 +53,7 @@ pipeline {
                 }
             }
         }
-
+/*
         stage('CODE ANALYSIS with SONARQUBE') {
           
 		  environment {
@@ -77,7 +77,7 @@ pipeline {
             }
           }
         }
-
+*/
         stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
