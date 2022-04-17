@@ -120,7 +120,7 @@ pipeline {
         	steps {
 			    script{
                     withCredentials([usernameColonPassword(credentialsId: 'nexuslogin', variable: 'NEXUS_CREDENTIALS_ID')]) {
-                    sh  'curl -u ${NEXUS_CREDENTIALS_ID} -o nexus.war "http://104.155.163.202:8081/repository/vpro-maven-group/com/crunchify/MavenTutorial/15/MavenTutorial-15.war"'
+                    sh  'curl -u ${NEXUS_CREDENTIALS_ID} -o nexus.war "http://104.155.163.202:8081/repository/vpro-maven-group/com/crunchify/MavenTutorial/15/MavenTutorial-${env.ARTVERSION}.war"'
 	       	        }
 		        }
             }
