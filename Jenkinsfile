@@ -115,7 +115,7 @@ pipeline {
                 }
             }
         }
-    }
+    
         stage ('Pull War file from Nexus') {
         	steps {
 			    script{
@@ -126,4 +126,5 @@ pipeline {
             }
         }
 
+}
 }
