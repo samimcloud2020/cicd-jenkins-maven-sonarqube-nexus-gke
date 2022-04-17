@@ -109,7 +109,9 @@ pipeline {
                             ]
                         );
                     } 
-		    
+			else {
+				error "*** File: ${artifactPath} , cloud not found";
+			}
                 }
             }
         }
@@ -125,5 +127,5 @@ pipeline {
 		}
     }
 	 }
-}
+
 }
