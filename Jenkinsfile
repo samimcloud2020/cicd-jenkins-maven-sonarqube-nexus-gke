@@ -53,6 +53,11 @@ pipeline {
                 }
             }
         }
+		stage ('Pull War file from Nexus') {
+            withCredentials([usernameColonPassword(credentialsId: 'nexuslogin', variable: 'NEXUS_CREDENTIALS_ID')]) {
+            sh script: 'curl -u ${NEXUS_CREDENTIALS_ID} -o nexus.war "http://104.155.163.202:8081/repository/vpro-maven-group/com/crunchify/MavenTutorial/15/MavenTutorial-15.war"'
+        }
+    }
 /*
         stage('CODE ANALYSIS with SONARQUBE') {
           
