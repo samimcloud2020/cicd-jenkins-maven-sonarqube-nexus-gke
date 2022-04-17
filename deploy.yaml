@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy1
+  name: deploy1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy1
+    spec:
+      containers:
+      - image: samimbsnl/cicd:latest
+        name: samimbsnl
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: service1
+  name: service1
+spec:
+  ports:
+  - name: 80-8080
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: deploy1
+  type: LoadBalancer
+status:
+  loadBalancer: {}
+  
