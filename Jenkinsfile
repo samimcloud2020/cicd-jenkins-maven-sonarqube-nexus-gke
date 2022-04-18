@@ -120,7 +120,7 @@ pipeline {
                 }
             }
         }
-    
+    /*
         stage ('Pull War file from Nexus') {
         	steps {
 			    script{
@@ -129,7 +129,8 @@ pipeline {
 	       	        }
 		        }
             }
-        }
+        } 
+	*/
 	    stage (" Make DockerFile"){
 		    steps {
 			    script {
@@ -149,6 +150,7 @@ pipeline {
 				}
 			}
 		}
+	    
 		stage("Build image") {
             steps {
                 script {
