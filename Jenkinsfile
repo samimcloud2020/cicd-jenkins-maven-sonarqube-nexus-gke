@@ -143,11 +143,12 @@ pipeline {
 			         sh "touch Dockerfile"
 					 
 					 sh " echo FROM tomcat >> Dockerfile"
-					 sh " echo RUN rm -rf nexus.war >> Dockerfile"    
+					  
 					 sh " echo ADD MavenTutorial.war /usr/local/tomcat/webapps >> Dockerfile"
 					 sh " echo CMD catalina.sh run >> Dockerfile"
 					 sh " echo EXPOSE 8080 >> Dockerfile"
-					 sh " cat Dockerfile"    
+					 sh " cat Dockerfile"   
+					 sh " rm Dockerfile"    
 					 
 					 myapp = docker.build("samimbsnl/cicd:${env.BUILD_ID}")    
 					     
