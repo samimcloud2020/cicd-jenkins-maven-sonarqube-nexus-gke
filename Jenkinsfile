@@ -146,6 +146,8 @@ pipeline {
 					 sh " echo ADD MavenTutorial.war /usr/local/tomcat/webapps >> Dockerfile"
 					 sh " echo CMD catalina.sh run >> Dockerfile"
 					 sh " echo EXPOSE 8080 >> Dockerfile"
+					 sh " echo Dockerfile"    
+					 myapp = docker.build("samimbsnl/cicd:${env.BUILD_ID}")    
 					     
 					     
 					   
@@ -153,7 +155,7 @@ pipeline {
 				}
 			}
 		}
-	    
+	/*    
 		stage("Build image") {
             steps {
                 script {
@@ -161,6 +163,7 @@ pipeline {
                 }
             }
         }
+	*/
         stage("Push image to Dockerhub") {
             steps {
                 script {
