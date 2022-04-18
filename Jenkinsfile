@@ -140,7 +140,7 @@ pipeline {
 				     sh  'curl -u ${NEXUS_CREDENTIALS_ID} -o MavenTutorial.war "http://10.128.0.32:8081/repository/vpro-maven-group/com/crunchify/MavenTutorial/15/MavenTutorial-"${ARTVERSION}".war"'
 			         sh "touch Dockerfile"
 					 sh " echo FROM tomcat >> Dockerfile"
-					 sh " echo ADD MavenTutorial.war /opt/tomcat/webapps >> Dockerfile"
+					 sh " echo ADD MavenTutorial.war /usr/local/tomcat/webapps >> Dockerfile"
 					 sh " echo CMD catalina.sh run >> Dockerfile"
 					   
 					 }
