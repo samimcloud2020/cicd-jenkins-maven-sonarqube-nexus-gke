@@ -125,7 +125,7 @@ pipeline {
         	steps {
 			    script{
                     withCredentials([usernameColonPassword(credentialsId: 'nexuslogin', variable: 'NEXUS_CREDENTIALS_ID')]) {
-                    sh  'curl -u ${NEXUS_CREDENTIALS_ID} -o nexus.war "http://10.128.0.32:8081/repository/vpro-maven-group/com/crunchify/MavenTutorial/15/MavenTutorial-"${ARTVERSION}".war"'
+                    sh  'curl -u ${NEXUS_CREDENTIALS_ID} -o MavenTutorial.war "http://10.128.0.32:8081/repository/vpro-maven-group/com/crunchify/MavenTutorial/15/MavenTutorial-"${ARTVERSION}".war"'
 	       	        }
 		        }
             }
@@ -137,7 +137,7 @@ pipeline {
 				     sh "rm -rf p1"
 				     sh "mkdir p1"
 				     sh "cd p1"
-				     sh  'curl -u ${NEXUS_CREDENTIALS_ID} -o nexus.war "http://10.128.0.32:8081/repository/vpro-maven-group/com/crunchify/MavenTutorial/15/MavenTutorial-"${ARTVERSION}".war"'
+				     sh  'curl -u ${NEXUS_CREDENTIALS_ID} -o MavenTutorial.war "http://10.128.0.32:8081/repository/vpro-maven-group/com/crunchify/MavenTutorial/15/MavenTutorial-"${ARTVERSION}".war"'
 			         sh "touch Dockerfile"
 					 sh " echo FROM tomcat >> Dockerfile"
 					 sh " echo ADD MavenTutorial.war /opt/tomcat/webapps >> Dockerfile"
