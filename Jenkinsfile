@@ -142,7 +142,7 @@ pipeline {
 			             		     
 			         sh "touch Dockerfile"
 					 
-					 sh " echo FROM openjdk:8-jre-alpine3.9 >> Dockerfile"
+					 sh " echo FROM tomcat >> Dockerfile"
 					  
 					 sh " echo ADD MavenTutorial.war /usr/local/tomcat/webapps >> Dockerfile"
 					 sh " echo CMD catalina.sh run >> Dockerfile"
